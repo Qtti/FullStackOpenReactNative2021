@@ -13,7 +13,7 @@ const repositoryItem = ({ item }) => {
         <Text>Rating: {item.ratingAverage}</Text>
 
     </View>
-  )};
+  );};
 
 export default repositoryItem;
   
