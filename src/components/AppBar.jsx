@@ -1,5 +1,6 @@
 import React from 'react';
-import { Pressable, Text, View, StyleSheet } from 'react-native';
+import { Text, View, StyleSheet } from 'react-native';
+import { Link } from 'react-router-native';
 import Constants from 'expo-constants';
 import theme from '../theme';
 
@@ -8,7 +9,8 @@ const styles = StyleSheet.create({
     paddingTop: Constants.statusBarHeight + 30,
     flexDirection: 'row',
     backgroundColor: theme.colors.appBarBackground,
-    padding: 10
+    padding: 10,
+    display: 'flex'
     // ...
   },
   link: {
@@ -23,15 +25,20 @@ const styles = StyleSheet.create({
   // ...
 });
 
-const OnPressRepositories = () => console.log("moi222");
+//const OnPressRepositories = () => console.log("moi222");
 
 const AppBar = () => {
     return  <View style={styles.container}>
-                <Pressable onPress={OnPressRepositories}>
-                    <View style={styles.flexItemB}>
-                        <Text style={styles.link}>Repositories</Text>
-                    </View>
-                </Pressable>
+                  <View style={styles.flexItemB}>
+                    <Link to="/">
+                      <Text style={styles.link}>Repositories</Text>
+                    </Link>
+                  </View>
+                  <View style={styles.flexItemB}>
+                    <Link to="/signin">
+                      <Text style={styles.link}>Sign in</Text>
+                    </Link>
+                  </View>
             </View>;
 };
 
